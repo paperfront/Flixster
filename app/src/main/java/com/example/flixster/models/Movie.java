@@ -9,12 +9,13 @@ import java.util.List;
 
 public class Movie {
 
-    private static String BASE_URL = "https://image.tmdb.org/t/p/w342";
+    private static final String BASE_URL = "https://image.tmdb.org/t/p/w342";
 
     private double popularity;
     private String posterPath;
     private String title;
     private String overview;
+    private String backdropPath;
 
     // Constructor for Movie objects
     public Movie(JSONObject jsonObject) throws JSONException {
@@ -23,7 +24,7 @@ public class Movie {
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
-
+        backdropPath = jsonObject.getString("backdrop_path");
     }
 
 
@@ -53,5 +54,9 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public String getBackdropPath() {
+        return BASE_URL + backdropPath;
     }
 }
