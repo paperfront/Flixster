@@ -4,11 +4,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Serializable {
 
+    public static final int POSTER_WIDTH = 120;
+    public static final int POSTER_HEIGHT = 180;
     private static final String BASE_URL = "https://image.tmdb.org/t/p/w342";
 
     private double popularity;
@@ -16,6 +19,7 @@ public class Movie {
     private String title;
     private String overview;
     private String backdropPath;
+    private int id;
 
     // Constructor for Movie objects
     public Movie(JSONObject jsonObject) throws JSONException {
@@ -25,6 +29,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
+        id = jsonObject.getInt("id");
     }
 
 
@@ -58,5 +63,9 @@ public class Movie {
 
     public String getBackdropPath() {
         return BASE_URL + backdropPath;
+    }
+
+    public int getId() {
+        return id;
     }
 }

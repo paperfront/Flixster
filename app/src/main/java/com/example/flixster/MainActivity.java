@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
 
+    public static final String KEY_MOVIE = "movie";
+
     List<Movie> movies;
 
     // Method to get the api key URL
@@ -36,8 +40,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         movies = new ArrayList<>();
+
+        //Create on click listener
+        MovieAdapter.OnClickListener onClickListener = new MovieAdapter.OnClickListener() {
+            @Override
+            public void onClick(int position) {
+                Log.d(TAG, "Clicked at position: " + position);
+                Intent i = new Intent(MainActivity.this, MovieActivity.class);
+                i.putExtra(KEY_MOVIE, movies.get(position));
+                startActivity(i);
+            }
+        };
+
         // Create adapter
-        final MovieAdapter movieAdapter = new MovieAdapter(this, movies);
+        final MovieAdapter movieAdapter = new MovieAdapter(this, movies, onClickListener);
         // Set the adapter on the recycler view
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         rvMovies.setAdapter(movieAdapter);

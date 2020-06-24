@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowMovie"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="180dp">
 
     <ImageView
         android:id="@+id/ivPoster"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
@@ -36,5 +37,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="0dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:ellipsize="end"
+        android:maxLines="6"
         tools:text="The Skrek movie is an incredible movie. No other movie can compare, except perhaps for Shrek 2. Many have tried to produce a film to take down Shrek, but all have failed. " />
 </RelativeLayout>
