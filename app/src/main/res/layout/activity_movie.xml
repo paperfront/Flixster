@@ -69,4 +69,14 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:text="Recommended Movies:" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvPopularity"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvPopularity"
+        tools:text="Movie Rating" />
 </RelativeLayout>

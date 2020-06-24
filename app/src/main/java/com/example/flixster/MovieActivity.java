@@ -38,6 +38,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView tvTitle;
     TextView tvOverview;
     TextView tvPopularity;
+    TextView tvRating;
 
     List<Movie> movies;
 
@@ -51,9 +52,10 @@ public class MovieActivity extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         tvOverview = findViewById(R.id.tvOverview);
         tvPopularity = findViewById(R.id.tvPopularity);
+        tvRating = findViewById(R.id.tvRating);
 
         Movie movie = (Movie) getIntent().getSerializableExtra(MainActivity.KEY_MOVIE);
-
+        tvRating.setText("Average Rating: " + Double.toString(movie.getRating()) + "/10");
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         tvPopularity.setText("Popularity Score: " + Double.toString(movie.getPopularity()) + "%");

@@ -19,6 +19,7 @@ public class Movie implements Serializable {
     private String title;
     private String overview;
     private String backdropPath;
+    private double rating;
     private int id;
 
     // Constructor for Movie objects
@@ -29,6 +30,7 @@ public class Movie implements Serializable {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
+        rating = jsonObject.getDouble("vote_average");
         id = jsonObject.getInt("id");
     }
 
@@ -63,6 +65,10 @@ public class Movie implements Serializable {
 
     public String getBackdropPath() {
         return BASE_URL + backdropPath;
+    }
+
+    public double getRating() {
+        return rating;
     }
 
     public int getId() {
