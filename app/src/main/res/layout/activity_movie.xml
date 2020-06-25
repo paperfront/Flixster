@@ -7,37 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".MovieActivity">
 
-    <ImageView
-        android:id="@+id/ivBanner"
-        android:layout_width="wrap_content"
-        android:layout_height="220dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tvTitle"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFeatured"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivBanner"
+        android:layout_below="@+id/textView4"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:textSize="24sp"
-        tools:text="Movie title" />
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
         tools:text="Movie overview" />
 
     <TextView
@@ -50,33 +43,51 @@
         android:layout_marginTop="10dp"
         tools:text="Movie Popularity" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFeatured"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBanner"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        tools:text="Movie title" />
+
+    <RatingBar
+        android:id="@+id/ratingMovie"
+        style="@android:style/Widget.DeviceDefault.RatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPopularity"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text="Recommended Movies:" />
+        android:clickable="false"
+        android:longClickable="false"
+        android:max="5"
+        android:stepSize="0.1" />
 
     <TextView
-        android:id="@+id/tvRating"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tvPopularity"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/tvPopularity"
-        tools:text="Movie Rating" />
+        android:layout_below="@+id/ratingMovie"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Recommended Movies:" />
+
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </RelativeLayout>

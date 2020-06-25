@@ -11,6 +11,7 @@ import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -42,7 +43,7 @@ public class MovieActivity extends AppCompatActivity {
     TextView tvTitle;
     TextView tvOverview;
     TextView tvPopularity;
-    TextView tvRating;
+    RatingBar ratingMovie;
 
     List<Movie> movies;
 
@@ -57,10 +58,10 @@ public class MovieActivity extends AppCompatActivity {
         tvTitle = binding.tvTitle;
         tvOverview = binding.tvOverview;
         tvPopularity = binding.tvPopularity;
-        tvRating = binding.tvRating;
+        ratingMovie = binding.ratingMovie;
 
         Movie movie = (Movie) getIntent().getSerializableExtra(MainActivity.KEY_MOVIE);
-        tvRating.setText("Average Rating: " + Double.toString(movie.getRating()) + "/10");
+        ratingMovie.setRating((float) movie.getRating() / 2);
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         tvPopularity.setText("Popularity Score: " + Double.toString(movie.getPopularity()) + "%");

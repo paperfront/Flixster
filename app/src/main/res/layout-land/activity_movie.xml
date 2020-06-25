@@ -33,11 +33,15 @@
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_below="@+id/tvTitle"
         android:layout_alignStart="@+id/tvTitle"
         android:layout_marginStart="0dp"
         android:layout_marginTop="25dp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
         tools:text="Movie overview" />
 
     <TextView
@@ -71,13 +75,13 @@
         android:layout_toEndOf="@+id/tvOverview"
         android:text="Recommended Movies:" />
 
-    <TextView
-        android:id="@+id/tvRating"
+    <RatingBar
+        android:id="@+id/ratingMovie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPopularity"
         android:layout_alignStart="@+id/tvPopularity"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="20dp"
-        tools:text="Movie Rating" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp" />
+
 </RelativeLayout>

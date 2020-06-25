@@ -72,7 +72,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         private TextView tvTitle;
         private TextView tvOverview;
         private ImageView ivPoster;
-
         private RelativeLayout relativeLayout;
 
         public ViewHolder(@NonNull View itemView) {
