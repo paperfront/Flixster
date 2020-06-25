@@ -21,7 +21,13 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
+
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,8 +19,10 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.adapters.FeaturedAdapter;
 import com.example.flixster.adapters.MovieAdapter;
+import com.example.flixster.databinding.ActivityMovieBinding;
 import com.example.flixster.models.Movie;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,14 +49,15 @@ public class MovieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie);
+        ActivityMovieBinding binding = ActivityMovieBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
         movies = new ArrayList<>();
-
-        ivBanner = findViewById(R.id.ivBanner);
-        tvTitle = findViewById(R.id.tvTitle);
-        tvOverview = findViewById(R.id.tvOverview);
-        tvPopularity = findViewById(R.id.tvPopularity);
-        tvRating = findViewById(R.id.tvRating);
+        ivBanner = binding.ivBanner;
+        tvTitle = binding.tvTitle;
+        tvOverview = binding.tvOverview;
+        tvPopularity = binding.tvPopularity;
+        tvRating = binding.tvRating;
 
         Movie movie = (Movie) getIntent().getSerializableExtra(MainActivity.KEY_MOVIE);
         tvRating.setText("Average Rating: " + Double.toString(movie.getRating()) + "/10");

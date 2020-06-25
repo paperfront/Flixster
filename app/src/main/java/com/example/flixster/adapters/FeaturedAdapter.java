@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 import com.example.flixster.R;
+import com.example.flixster.databinding.ItemFeaturedBinding;
 import com.example.flixster.models.Movie;
 
 import java.util.List;
@@ -64,8 +65,9 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivFeatured = itemView.findViewById(R.id.ivFeatured);
-            relativeLayout = itemView.findViewById(R.id.relativeFeatured);
+            ItemFeaturedBinding binding = ItemFeaturedBinding.bind(itemView);
+            ivFeatured = binding.ivFeatured;
+            relativeLayout = binding.relativeFeatured;
         }
 
         public void bind(Movie movie) {
