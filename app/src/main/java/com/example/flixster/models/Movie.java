@@ -71,6 +71,7 @@ public class Movie implements Serializable {
         return rating;
     }
 
+
     public int getId() {
         return id;
     }
