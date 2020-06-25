@@ -98,7 +98,6 @@
         android:background="#00FFFFFF"
         android:visibility="invisible"
         app:srcCompat="@drawable/play_2"
-        tools:srcCompat="@drawable/play_2"
         tools:visibility="visible" />
 
 </RelativeLayout>

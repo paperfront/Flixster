@@ -92,19 +92,18 @@
 
     <ImageView
         android:id="@+id/ivPlayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="57dp"
+        android:layout_width="71dp"
+        android:layout_height="73dp"
         android:layout_alignEnd="@+id/ivBanner"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="190dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="156dp"
         android:background="#00FFFFFF"
         android:visibility="invisible"
         app:srcCompat="@drawable/play_2"
-        tools:srcCompat="@drawable/play_2"
         tools:visibility="visible" />
 
 </RelativeLayout>
